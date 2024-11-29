@@ -8,7 +8,6 @@ import { selectRatingColour } from "../../../../utils/selectRatingColor";
 
 const MainDescription: React.FC<AnimeInfo> = (result) => {
   const {
-    id,
     title,
     image,
     cover,
