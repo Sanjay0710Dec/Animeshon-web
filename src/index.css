@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full-screen {
+  max-width: initial;
+  width: 100%;
+  max-height: 100vh;
+}
+
+.misc {
+  background-color: black;
+}
+.main-container {
+  min-height: calc(100vh - 64px);
+}
+
+@media screen and (min-width: 768px) {
+  .misc {
+    background-image: url(./assets/bg-itachi-hd.jpg);
+    background-size: 110% 100%;
+  }
+  .main-container {
+    min-height: calc(100vh - 70px);
+  }
+}
+
+.auth {
+  background-image: url(./assets/uchiha-clan.jpg);
+  background-size: 100% 100%;
+}
+
+.loader {
+  width: 25px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 30%,
+        #0000 0 70%,
+        rgb(0 0 0/100%) 0
+      )
+      50%/8% 100%,
+    linear-gradient(90deg, rgb(0 0 0/25%) 30%, #0000 0 70%, rgb(0 0 0/75%) 0)
+      50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+.loader::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.carousal-gradient {
+  background: linear-gradient(to bottom, transparent 0%, black 97%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@keyframes breathing {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.card-breathing {
+  animation: breathing 2s ease-in-out infinite;
+}
+
+#video-controls-container {
+  transition: opacity 200ms ease-in-out;
+}
+
+#video-player:hover #video-controls-container {
+  opacity: 1;
+}
+
+#volume-bar {
+  width: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition:
+    width 150ms ease-in-out,
+    transform 150ms ease-in-out;
+}
+#volume-container:hover #volume-bar,
+#volume-bar:focus-within {
+  width: 100px;
+  transform: scaleX(1);
+}
+
+.itachi-background {
+  background-image: url("./assets/wallpaperflare.com_profile.jpg");
+
+  background-size: cover;
+}
