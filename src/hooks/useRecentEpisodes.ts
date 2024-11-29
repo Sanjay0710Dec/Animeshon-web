@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { AnimeRecentEpisodes } from "../types/animeResult/recent-trending";
 import animeApi from "../api/animeApi";
 const useRecentEpisodes = () => {
-  const [page, setPage] = useState<number>(1);
+  const [page, _setPage] = useState<number>(1);
   const [result, setResult] = useState<AnimeRecentEpisodes>();
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const useRecentEpisodes = () => {
     [page]
   );
 
-  return { setPage, result, errorMessage, loading };
+  return { result, errorMessage, loading };
 };
 
 export default useRecentEpisodes;

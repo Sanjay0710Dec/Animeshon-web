@@ -3,7 +3,7 @@ import animeApi from "../api/animeApi";
 import { TrendingAnimeResult } from "../types/animeResult/recent-trending";
 
 const useTrendingAnime = () => {
-  const [page, setPage] = useState<number>(1);
+  const [page, _setPage] = useState<number>(1);
   const [result, setResult] = useState<TrendingAnimeResult>();
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const useTrendingAnime = () => {
     [page]
   );
 
-  return { setPage, result, errorMessage, loading };
+  return { result, errorMessage, loading };
 };
 
 export default useTrendingAnime;
