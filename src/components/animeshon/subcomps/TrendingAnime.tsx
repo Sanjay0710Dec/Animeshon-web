@@ -4,7 +4,7 @@ import useTrendingAnime from "../../../hooks/useTrendingAnime";
 import AnimeCard from "./AnimeCard";
 
 const TrendingAnime: React.FC = React.memo(() => {
-  const { setPage, result, errorMessage, loading } = useTrendingAnime();
+  const {  result, errorMessage, loading } = useTrendingAnime();
 
   return (
     <section id="trending-anime-container" className="mt-4">

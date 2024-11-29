@@ -4,7 +4,7 @@ import AnimeCardsSkeleton from "../../skeletons/AnimeCardsSkeleton";
 import AnimeCard from "./AnimeCard";
 
 const RecentAiredEpisodes: React.FC  = () =>{
-         const{ setPage, result, errorMessage, loading} = useRecentEpisodes();
+         const{result, errorMessage, loading} = useRecentEpisodes();
     return(
         <section id="recent-anime-episode-container" className="mt-4">
         <h2 id="container-title" className="text-3xl mb-2 pl-4 font-semibold text-[#e50000]">Recently Aired Episodes</h2>
