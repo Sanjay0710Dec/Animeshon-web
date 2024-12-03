@@ -34,6 +34,9 @@ const AnimeTrendingPageMainComponent = lazy(
 const AnimeFilterPageMainComponent = lazy(
   () => import("./components/animeshon/maincomps/AnimeFilterPageMainComponent"),
 );
+const AnimeFeedBackMainComponent = lazy(
+  () => import("./components/animeshon/maincomps/AnimeFeedBackMainComponent"),
+);
 import ErrorPage from "./pages/ErrorPage";
 import FallBackMain from "./components/fallbacks/FallBackMain";
 import ErrorFallBack from "./components/fallbacks/ErrorFallBack";
@@ -86,6 +89,14 @@ const animeRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<FallBackMain />}>
             <AnimeFilterPageMainComponent />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/anime/feedback",
+        element: (
+          <Suspense fallback={<FallBackMain />}>
+            <AnimeFeedBackMainComponent />
           </Suspense>
         ),
       },
