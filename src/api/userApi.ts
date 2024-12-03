@@ -1,5 +1,6 @@
 import {
   EmailVerificationResponse,
+  feedBackSuggestionResponse,
   loginResponse,
   SignInSchema,
   signupResponse,
@@ -23,7 +24,6 @@ class UserApi {
       const jsonResponse = await fetchResponse.json();
       return jsonResponse;
     } catch (error) {
-      
       throw new Error("connection to server failed");
     }
   }
@@ -44,7 +44,6 @@ class UserApi {
       const jsonResponse = await fetchResponse.json();
       return jsonResponse;
     } catch (error) {
-      
       throw new Error("connection to server failed");
     }
   }
@@ -62,7 +61,27 @@ class UserApi {
       const jsonResponse = await fetchResponse.json();
       return jsonResponse;
     } catch (error) {
-     
+      throw new Error("connection to server failed");
+    }
+  }
+  static async uploadUserFeedBackAndSuggestion(
+    feedback: string,
+    suggestion: string,
+  ): Promise<feedBackSuggestionResponse> {
+    try {
+      const fetchResponse = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/user/feedback-suggestion`,
+        {
+          method: "POST",
+          body: JSON.stringify({ feedback, suggestion }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      const jsonResponse = await fetchResponse.json();
+      return jsonResponse;
+    } catch (error) {
       throw new Error("connection to server failed");
     }
   }
