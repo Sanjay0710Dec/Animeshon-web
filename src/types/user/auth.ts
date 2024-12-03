@@ -92,4 +92,4 @@ export interface otpResponse extends signupResponse {}
 
 export interface resendOtpResponse extends signupResponse {}
 export interface EmailVerificationResponse extends signupResponse {}
-
+export interface feedBackSuggestionResponse extends signupResponse {}
