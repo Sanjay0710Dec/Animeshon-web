@@ -5,6 +5,10 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 const menuItems = [
   {
+    item:"Home",
+    path:"/"
+  },
+  {
     item: "Popular",
     path: "/anime/popular",
   },
@@ -16,6 +20,11 @@ const menuItems = [
     item: "Login",
     path: "/auth/login",
   },
+  {
+    item:"Feedback",
+    path:"/anime/feedback"
+  }
+
 ];
 
 const sidebarVariants = {
