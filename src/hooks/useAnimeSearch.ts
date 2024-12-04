@@ -39,6 +39,6 @@ const useAnimeSearch = () =>{
       })
    },[debouncedAnimeSearched]);
 
-   return {animeSearched,setAnimeSearched,loading,animeSearchErrorMessage,result};
+   return {animeSearched,setAnimeSearched,loading,animeSearchErrorMessage,result,setResult,setAnimeSearchErrorMessage};
 }
 export default useAnimeSearch;
