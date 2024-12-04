@@ -11,6 +11,8 @@ const Search: React.FC = () => {
     loading,
     animeSearchErrorMessage,
     result,
+    setResult,
+    setAnimeSearchErrorMessage,
   } = useAnimeSearch();
   return (
     <div className=" bg-white text-black flex justify-center  w-[75%] xl:w-[40%] px-0.5 py-0.5 h-[60%] rounded-md border border-black relative">
@@ -31,9 +33,25 @@ const Search: React.FC = () => {
       >
         Filter
       </Link>
+      {result || animeSearchErrorMessage ? (
+        <div
+          className="fixed inset-[3.5rem_0px_0px_0px] z-[5] opacity-30 bg-black"
+          onClick={function () {
+            if (result) {
+              setResult(null);
+            }
+            if (animeSearchErrorMessage) {
+              setAnimeSearchErrorMessage("");
+            }
+            if (animeSearched) {
+              setAnimeSearched("");
+            }
+          }}
+        ></div>
+      ) : null}
       <div
         id="anime-searched-results"
-        className="max-h-[200px] md:max-h-[300px] overflow-y-auto overscroll-y-contain absolute left-0 top-[3rem] rounded-md scrollbar-hide bg-white text-black w-full z-50"
+        className="max-h-[200px] md:max-h-[300px] overflow-y-auto overscroll-y-contain absolute left-0 top-[3rem] rounded-md scrollbar-hide bg-white text-black w-full z-10"
       >
         {loading ? (
           <div className="text-xl pl-1">loading....</div>
@@ -46,7 +64,7 @@ const Search: React.FC = () => {
             />
           ))
         ) : (
-          <div>{animeSearchErrorMessage}</div>
+          <div className="text-wrap px-1">{animeSearchErrorMessage}</div>
         )}
       </div>
     </div>
